@@ -7,6 +7,7 @@
 #include <string>
 using std::string;
 #include <memory>
+using std::unique_ptr;
 using std::shared_ptr;
 
 #include "Person.h"
@@ -44,6 +45,7 @@ public:
 		\param image_filename a file containing an image of the person
 	*/
 	AddressBookEntry(const Person& person, const string& image_filename = "");
+	AddressBookEntry(const AddressBookEntry& rhs);
 	// Relies on the compiler-provided copy constructor
 	// Relies on the compiler-provided assignment operator
 
@@ -54,7 +56,7 @@ public:
 
 private:
 	Person _person;					//!< Contains the name and age of the person
-	shared_ptr<Image> _image_ptr;	//!< A shared pointer to the person's image
+	unique_ptr<Image> _image_ptr;	//!< A shared pointer to the person's image
 };
 
 #endif
