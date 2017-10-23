@@ -46,9 +46,11 @@ public:
 	*/
 	AddressBookEntry(const Person& person, const string& image_filename = "");
 	AddressBookEntry(const AddressBookEntry& rhs);
+	AddressBookEntry& operator=(const AddressBookEntry& rhs);
+	void swap(AddressBookEntry& temp);
 	// Relies on the compiler-provided copy constructor
 	// Relies on the compiler-provided assignment operator
-
+	
 	string getImageName() const;
 	void setImageName(string newname);
 	Person getPerson() const { return _person; }
