@@ -32,4 +32,10 @@ TEST_CASE("Assignment of AddressBookEntry object does not share any state "){
 	
 	//The image pointers in entry and entry_copy share the same Image address
 	//Changing one changes the other
+	
+	
+	//Exercise 4.5
+	//using the temporary variable, allows the assignment to stop whenever there 
+	// isnt enough memory by throwing an exception.
+	//the swap function from the stl library also throws exceptions
 }
